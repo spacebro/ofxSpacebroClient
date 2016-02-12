@@ -30,7 +30,15 @@ void ofApp::onServiceRemove(ofxAvahiService &s){
 
 //--------------------------------------------------------------
 void ofApp::onConnection () {
+  registerToMaster("[\"shoot\", \"bump\", \"snick\"]", "ofxSpacebro-example");
   bindEvents();
+}
+
+//--------------------------------------------------------------
+void ofApp::registerToMaster(string actionList, string clientName) {
+  string key = "register";
+  string message = "{\"eventsList\":"+actionList+", \"clientName\":\"" + clientName+"\"}";
+  socketIO.emit(key, message);
 }
 
 //--------------------------------------------------------------

@@ -26,6 +26,7 @@ class ofApp : public ofBaseApp{
     void bindEvents();
     void gotEvent(std::string& name);
     void onServerEvent(ofxSocketIOData& data);
+    void registerToMaster(string actionList, string clientName);
 
 		ofxAvahiClientService service;
 		ofxAvahiClientBrowser browser;
