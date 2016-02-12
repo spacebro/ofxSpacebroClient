@@ -3,8 +3,9 @@
 #include "ofMain.h"
 
 #include "ofxAvahiClient.h"
+#include "ofxSocketIO.h"
 
-class testApp : public ofBaseApp{
+class ofApp : public ofBaseApp{
 	public:
 		void setup();
 		void update();
@@ -21,7 +22,14 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     void onServiceNew(ofxAvahiService &s);
     void onServiceRemove(ofxAvahiService &s);
+    void onConnection();
+    void bindEvents();
+    void gotEvent(std::string& name);
+    void onServerEvent(ofxSocketIOData& data);
 
 		ofxAvahiClientService service;
 		ofxAvahiClientBrowser browser;
+
+    ofxSocketIO socketIO;
+    ofEvent<ofxSocketIOData&> serverEvent;
 };

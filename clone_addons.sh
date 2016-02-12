@@ -11,4 +11,5 @@ else
 fi
 
 ${PREFIX}emmanuelgeoffray/ofxAvahiClient.git
+${PREFIX}soixantecircuits/ofxSocketIO.git
 
