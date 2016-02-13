@@ -13,7 +13,7 @@ class ofxSpacebroClient : public ofBaseApp{
     void onConnection();
     void bindEvents();
     void gotEvent(std::string& name);
-    void registerEvent(ofEvent<ofxSocketIOData&> &event, string eventName);
+    ofEvent<ofxSocketIOData&>& registerEvent(string eventName);
     void bindEvent(ofEvent<ofxSocketIOData&> &event, string eventName);
     string getEventsList();
 
@@ -24,7 +24,7 @@ class ofxSpacebroClient : public ofBaseApp{
 		ofxAvahiClientBrowser browser;
 
     ofxSocketIO socketIO;
-    vector< ofEvent<ofxSocketIOData&>* > events;
+    vector< ofEvent<ofxSocketIOData&> > events;
 
     vector<string> eventNames;
     string clientName;

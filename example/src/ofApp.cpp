@@ -2,10 +2,9 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-  spacebroClient.registerEvent(newMediaEvent, "new-media");
-  ofAddListener(newMediaEvent, this, &ofApp::onNewMediaEvent);
-  spacebroClient.registerEvent(otherEvent, "other");
-  ofAddListener(otherEvent, this, &ofApp::onOtherEvent);
+  
+  ofAddListener(spacebroClient.registerEvent("new-media"), this, &ofApp::onNewMediaEvent);
+  ofAddListener(spacebroClient.registerEvent("other"), this, &ofApp::onOtherEvent);
 
   spacebroClient.setup("ofxSpacebroClient");
 }

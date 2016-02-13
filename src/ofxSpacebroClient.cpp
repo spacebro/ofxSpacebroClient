@@ -59,15 +59,17 @@ string ofxSpacebroClient::getEventsList() {
 }
 
 //--------------------------------------------------------------
-void ofxSpacebroClient::registerEvent(ofEvent<ofxSocketIOData&>& event, string eventName) {
+ofEvent<ofxSocketIOData&>& ofxSpacebroClient::registerEvent( string eventName) {
+  ofEvent<ofxSocketIOData&> event; 
   eventNames.push_back(eventName);
-  events.push_back(&event);
+  events.push_back(event);
+  return events[events.size()-1];
 }
 
 //--------------------------------------------------------------
 void ofxSpacebroClient::bindEvents () {
   for (int i = 0; i < events.size(); i++){
-    bindEvent(*events[i], eventNames[i]);
+    bindEvent(events[i], eventNames[i]);
   }
 }
 
