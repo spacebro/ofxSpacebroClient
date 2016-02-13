@@ -3,7 +3,9 @@ An addon for openFrameworks to connect to [spacebro](https://github.com/soixante
 # Install
 
 You need this repo, and clone other addons. We've prepared a script to do that for you.
+Install [openFrameworks](http://openframeworks.cc) and then
 ```
+cd your_of_path/addons
 git clone git@github.com:soixantecircuits/ofxSpacebroClient.git
 cd ofxSpacebroClient
 bash clone_addons.sh
