@@ -1,2 +1,3 @@
 ofxAvahiClient
 ofxSocketIO
+ofxSpacebro

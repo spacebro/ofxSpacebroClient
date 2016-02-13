@@ -2,8 +2,7 @@
 
 #include "ofMain.h"
 
-#include "ofxAvahiClient.h"
-#include "ofxSocketIO.h"
+#include "ofxSpacebroClient.h"
 
 class ofApp : public ofBaseApp{
 	public:
@@ -20,17 +19,10 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-    void onServiceNew(ofxAvahiService &s);
-    void onServiceRemove(ofxAvahiService &s);
-    void onConnection();
-    void bindEvents();
-    void gotEvent(std::string& name);
-    void onServerEvent(ofxSocketIOData& data);
-    void registerToMaster(string actionList, string clientName);
+    void onNewMediaEvent(ofxSocketIOData& data);
+    void onOtherEvent(ofxSocketIOData& data);
 
-		ofxAvahiClientService service;
-		ofxAvahiClientBrowser browser;
-
-    ofxSocketIO socketIO;
-    ofEvent<ofxSocketIOData&> serverEvent;
+    ofxSpacebroClient spacebroClient;
+    ofEvent<ofxSocketIOData&> newMediaEvent;
+    ofEvent<ofxSocketIOData&> otherEvent;
 };
