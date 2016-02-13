@@ -3,7 +3,7 @@ An addon for openFrameworks to connect to [spacebro](https://github.com/soixante
 # Install
 
 ```
-git clone git@github.com:soixantecircuits/ofxSpacebro.git
-cd ofxSpacebro
+git clone git@github.com:soixantecircuits/ofxSpacebroClient.git
+cd ofxSpacebroClient
 bash clone_addons.sh
 ```

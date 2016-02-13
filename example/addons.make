@@ -1,3 +1,3 @@
 ofxAvahiClient
 ofxSocketIO
-ofxSpacebro
+ofxSpacebroClient
