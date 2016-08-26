@@ -11,6 +11,21 @@ cd ofxSpacebroClient
 bash clone_addons.sh
 ```
 
+# Usage
+
+First, you need to regsiter your events
+```c++
+// Use spacebroClient.registerEvent(eventName) to create ofEvents you can listen to
+ofAddListener(spacebroClient.registerEvent("stuff"), this, &ofApp::onStuff)
+```
+
+Then you can setup your client and register to the server
+```c++
+// Use spacebroClient.setup(clientName) to register as clientName to the server
+spacebroClient.setup("ofxSpacebroClient")
+```
+
+
 # Test
 
 ## Run spacebro
